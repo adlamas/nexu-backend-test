@@ -11,6 +11,13 @@ class BrandsController < ApplicationController
     render json: { errors: e.message }
   end
 
+  def brand_models
+    @brand = Brand.find(params[:id])
+    render json: @brand.car_models.select(:id, :name, :average_price)
+  rescue StandardError => e
+    render json: { errors: e.message }
+  end
+
   def brands_params
     params.permit(:name)
   end
