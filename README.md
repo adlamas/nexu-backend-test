@@ -1,6 +1,6 @@
 
 # Instructions to run
-### Install ruby and install the bundler gem
+Install ruby 3.2.2, and install the bundler gem
 ### Glone repo
 git clone git@github.com:adlamas/nexu-backend-test.git
 ### create DB structure and populate it
@@ -24,3 +24,4 @@ rails s (Will be started on localhost:3000)
 
 # Some thoughts
 Since the average_price for the brands is a calculation, I decided no to put it as an attribute since is not actually part of the model but a calculation based on the models model. I'd, if it was necessary, configure the cache in the server to avoid a permanent calculation of the average_price because could slower the app rapidly.
+I focused on the structure of the data, and tried to have tests related to models, requests and the good and bad responses. Rubocop is the linter I used for app/spec folders.
